@@ -1,0 +1,23 @@
+const member = require("../db/memberDAO");
+const index = () => {
+    console.log("service 연동 되나???");
+    console.log( member )
+}
+module.exports = { index : index }
+
+
+
+<% for(let i=0 ; i < member.length ; i++){ %>
+        id : <%= member[i].id %><br>
+        name : <%= member[i].name %><br>
+        addr : <%= member[i].addr %><hr>
+    <% } %>
+
+
+
+<h3>for each</h3>
+    <% member.forEach( data => { %>
+        id : <%= data.id %><br>
+        name : <%= data.name %><br>
+        addr : <%= data.addr %><hr>
+    <% }) %>
